@@ -14,6 +14,10 @@ function renderTitle(title) {
   return `# ${title}`;
 }
 
+// data.title
+// data.description
+// data.authorName
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `${renderTitle(data.title)}
