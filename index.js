@@ -2,8 +2,8 @@
 // We need: inquirerer, fs, and generateMarkdown
 // Note to self: inquirer docs: npmjs.com/package/inquirer
 const fs = require('fs');
-const inquirerer = require('inquirer');
-const generateMarkdown = require('generateMarkdown');
+const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 // Need questions on: title, author name, description, using the app, installation, reporting issues, contributing, and licenses
@@ -22,19 +22,45 @@ function init() {
     inquirer
         .prompt([
             {
-            type: '',
-            message: '',
-            name: '',
+            type: 'input',
+            message: `${questions[0]}`,
+            name: 'title',
             },
             {
-            type: '',
-            message: '',
-            name: '',
+            type: 'input',
+            message: `${questions[1]}`,
+            name: 'authorName',
             },
             {
-            type: '',
-            message: '',
-            name: '',
+            type: 'input',
+            message: `${questions[2]}`,
+            name: 'description',
+            },
+            {
+            type: 'input',
+            message: `${questions[3]}`,
+            name: 'howTo',
+            },
+            {
+            type: 'input',
+            message: `${questions[4]}`,
+            name: 'install',
+            },
+            {
+            type: 'input',
+            message: `${questions[5]}`,
+            name: 'report',
+            },
+            {
+            type: 'input',
+            message: `${questions[6]}`,
+            name: 'contribute',
+            },
+            {
+            type: 'list',
+            choices: ['GNU GPL v3', 'Mozilla Public License 2.0', 'Apache 2.0', 'CC0', 'N/A'],
+            message: `${questions[7]}`,
+            name: 'license',
             },
         ])
         .then((response) =>
