@@ -6,7 +6,10 @@ const inquirerer = require('inquirer');
 const generateMarkdown = require('generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = [];
+// Need questions on: title, author name, description, using the app, installation, reporting issues, contributing, and licenses
+const questions = ['Title of the project:', 'Name of the main author:', 'Description of the project:',
+'How do you use the project?', 'How do you install the project?', 'Where can we go to report issues?',
+'How can someone contribute to the project, if possible?', 'Any licenses?'];
 
 // TODO: Create a function to write README file
 // We can use generateMarkdown for this
