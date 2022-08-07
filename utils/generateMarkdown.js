@@ -4,16 +4,16 @@
 function renderLicenseBadge(license) {
   switch(license){
     case 'GNU GPL v3': {
-      return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]\n`;
+      return '![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)\n';
     }
     case 'Mozilla Public License 2.0': {
-      return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]\n`;
+      return `![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)\n`;
     }
     case 'Apache 2.0': {
-      return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]\n`;
+      return `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)\n`;
     }
     case 'CC0': {
-      return `[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)]\n`;
+      return `![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)\n`;
     }
     case 'N/A': {
       break;
@@ -49,8 +49,10 @@ function renderLicenseSection(license) {
   if(license == 'N/A'){
     return '';
   } else{
-    renderLicenseBadge(license);
-    renderLicenseLink(license);
+    console.log(license);
+    return `${renderLicenseBadge(license)}
+    ${renderLicenseLink(license)}
+    `
   }
 }
 
