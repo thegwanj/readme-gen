@@ -40,6 +40,7 @@ THEN I am taken to the corresponding section of the README
 
 ## Usage
 In the terminal, the user is asked a series of questions relating to the project. These answers are then taken and put in a README file, which is stored in the output folder.
+The following link is a video with an example of how it can be used: https://watch.screencastify.com/v/VLlELHLI4YiQcPDP8TJJ
 
 ## Installation
 After downloading by going to the repository (https://github.com/thegwanj/readme-gen), using npm install will install the necessary packages for this project.
