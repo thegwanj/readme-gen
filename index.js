@@ -13,7 +13,13 @@ const questions = ['Title of the project:', 'Name of the main author:', 'Descrip
 
 // TODO: Create a function to write README file
 // We can use generateMarkdown for this
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    let content = generateMarkdown(data);
+    
+    fs.writeFile(`./output/${fileName}`, content, err => {
+        err ? console.error(err) : console.log('Success!')
+    });
+}
 
 // TODO: Create a function to initialize app
 // Function that will be called to put everything above together
@@ -66,7 +72,7 @@ function init() {
         .then((response) =>
             console.log(response),
 
-            // response will be seen as "data" in generateMarkdown function
+            // response will be seen as "data" in writeToFile function
             //writeToFile('README.md', response)
         );
 
