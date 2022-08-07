@@ -7,8 +7,8 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 // Need questions on: title, author name, description, using the app, installation, reporting issues, contributing, and licenses
-const questions = ['Title of the project:', 'Name of the main author:', 'Description of the project:',
-'How do you use the project?', 'How do you install the project?', 'Where can we go to report issues?',
+const questions = ['Title of the project:', 'GitHub username:', 'Contact email:', 'Description of the project:',
+'How do you use the project?', 'How do you install the project?', 'Any tests that can be run?',
 'How can someone contribute to the project, if possible?', 'Any licenses?'];
 
 // TODO: Create a function to write README file
@@ -41,32 +41,37 @@ function init() {
             {
             type: 'input',
             message: `${questions[2]}`,
-            name: 'description',
+            name: 'email',
             },
             {
             type: 'input',
             message: `${questions[3]}`,
-            name: 'howTo',
+            name: 'description',
             },
             {
             type: 'input',
             message: `${questions[4]}`,
-            name: 'install',
+            name: 'howTo',
             },
             {
             type: 'input',
             message: `${questions[5]}`,
-            name: 'report',
+            name: 'install',
             },
             {
             type: 'input',
             message: `${questions[6]}`,
+            name: 'test',
+            },
+            {
+            type: 'input',
+            message: `${questions[7]}`,
             name: 'contribute',
             },
             {
             type: 'list',
             choices: ['GNU GPL v3', 'Mozilla Public License 2.0', 'Apache 2.0', 'CC0', 'N/A'],
-            message: `${questions[7]}`,
+            message: `${questions[8]}`,
             name: 'license',
             },
         ])
