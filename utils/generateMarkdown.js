@@ -26,16 +26,16 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   switch(license){
     case 'GNU GPL v3': {
-      return `(https://www.gnu.org/licenses/gpl-3.0)`;
+      return `https://www.gnu.org/licenses/gpl-3.0`;
     }
     case 'Mozilla Public License 2.0': {
-      return `(https://opensource.org/licenses/MPL-2.0)`;
+      return `https://opensource.org/licenses/MPL-2.0`;
     }
     case 'Apache 2.0': {
-      return `(https://opensource.org/licenses/Apache-2.0)`;
+      return `https://opensource.org/licenses/Apache-2.0`;
     }
     case 'CC0': {
-      return `(http://creativecommons.org/publicdomain/zero/1.0/)`;
+      return `http://creativecommons.org/publicdomain/zero/1.0/`;
     }
     case 'N/A': {
       break;
@@ -76,36 +76,52 @@ function renderInstall(install) {
   return `${install}`;
 }
 
-function renderReport(report) {
-  return `${report}`;
+function renderTest(test) {
+  return `${test}`;
 }
 
 function renderContribute(contribute) {
   return `${contribute}`;
 }
 
+function renderEmail(email){
+  return `${email}`;
+}
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `${renderTitle(data.title)}
 
-Created by: ${renderAuthorName(data.authorName)}
+## Table of Contents
+- [Description](#description)
+- [Usage](#usage)
+- [Installation](#installation)
+- [Tests](#tests)
+- [Contributing](#contributing)
+- [Licenses](#licenses)
+- [Questions](#questions)
+
 ## Description
 ${renderDescription(data.description)}
 
-## Using the App
+## Usage
 ${renderHowTo(data.howTo)}
 
 ## Installation
 ${renderInstall(data.install)}
 
-## Report Issues
-${renderReport(data.report)}
+## Tests
+${renderTest(data.test)}
 
-## Contribute
+## Contributing
 ${renderContribute(data.contribute)}
 
 ## Licenses
 ${renderLicenseSection(data.license)}
+
+## Questions
+GitHub profile: https://github.com/${renderAuthorName(data.authorName)}\n
+Email: ${renderEmail(data.email)}
 `;
 }
 
