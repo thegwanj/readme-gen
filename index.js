@@ -14,8 +14,9 @@ const questions = ['Title of the project:', 'Name of the main author:', 'Descrip
 // TODO: Create a function to write README file
 // We can use generateMarkdown for this
 function writeToFile(fileName, data) {
-    let content = generateMarkdown(data);
-    
+    // console.log('function called');
+    let content = generateMarkdown(data);    
+
     fs.writeFile(`./output/${fileName}`, content, err => {
         err ? console.error(err) : console.log('Success!')
     });
@@ -70,12 +71,12 @@ function init() {
             },
         ])
         .then((response) =>
-            console.log(response),
+            //console.log(response),
 
+            //console.log('calling the writeToFile function'),
             // response will be seen as "data" in writeToFile function
-            //writeToFile('README.md', response)
-        );
-
+            writeToFile('README.md', response)
+        )
 }
 
 // Function call to initialize app
