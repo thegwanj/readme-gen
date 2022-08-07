@@ -64,7 +64,10 @@ function init() {
             },
         ])
         .then((response) =>
-            console.log(response)
+            console.log(response),
+
+            // response will be seen as "data" in generateMarkdown function
+            //writeToFile('README.md', response)
         );
 
 }
